@@ -13,13 +13,12 @@ development:
 
 test:
   <<: *default
-  username:  <%= ENV['FOODLOG_DB_USER'] %>
-  database: <%= ENV['FOODLOG_DBNAME'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username:  foodlog_user
+  database: foodlog_db
+  pool: 2
 
 production:
   <<: *default
-  database: <%= ENV['FOODLOG_DBNAME'] %>
-  username: <%= ENV['FOODLOG_DB_USER'] %>
-  password: <%= ENV['FOODLOG_DB_PASSWORD'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username:  foodlog_user
+  database: foodlog_db
+  pool: 2
